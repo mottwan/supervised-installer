@@ -53,7 +53,7 @@ curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/m
 you can set these parameters by appending ` -- <parameter> <value>` like:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- -m MY_MACHINE
+curl -sL https://raw.githubusercontent.com/mottwan/supervised-installer/master/installer.sh | bash -s -- -m MY_MACHINE
 ```
 
 ## Supported Machine types
@@ -64,8 +64,8 @@ curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/m
 - odroid-xu
 - qemuarm
 - qemuarm-64
-- qemux86
-- qemux86-64
+- qemux86  (ubuntu x66)
+- qemux86-64 (ubuntu x64)
 - raspberrypi
 - raspberrypi2
 - raspberrypi3
