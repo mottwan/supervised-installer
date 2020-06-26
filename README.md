@@ -33,8 +33,31 @@ network-manager
 ```
 
 ## Dependencies
-```
+```bash
 sudo apt-get install -y bash curl git jq avahi-daemon dbus apparmor-utils network-manager libavahi-compat-libdnssd-dev libatlas3-base apt-transport-https ca-certificates socat software-properties-common ftpd mc
+```
+## Reboot
+```bash
+sudo reboot
+```
+## Docker install
+```bash
+sudo curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docker
+```
+## Portainer
+```bash
+docker pull portainer/portainer
+docker volume create portainer_data
+docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+```
+## Open portainer in web browser
+```bash
+http://adress:9000
+sudo su
+Разрядность системы - getconf LONG_BIT
 ```
 **Important**: Don't only install NetworkManager, you need also use it on your system.
 
@@ -73,6 +96,11 @@ curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/m
 ## Sample
 ```bash
 curl -sL https://raw.githubusercontent.com/mottwan/supervised-installer/master/installer.sh | bash -s -- -m MY_MACHINE
+```
+
+## Open Homeassistant
+```bash
+Hass.io - IP adress:8123
 ```
 
 ## Supported Machine types
