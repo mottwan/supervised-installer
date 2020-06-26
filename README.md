@@ -32,6 +32,10 @@ apparmor-utils
 network-manager
 ```
 
+## Dependencies
+```
+sudo apt-get install -y bash curl git jq avahi-daemon dbus apparmor-utils network-manager libavahi-compat-libdnssd-dev libatlas3-base apt-transport-https ca-certificates socat software-properties-common ftpd mc
+```
 **Important**: Don't only install NetworkManager, you need also use it on your system.
 
 ## Run
@@ -52,6 +56,21 @@ curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/m
 
 you can set these parameters by appending ` -- <parameter> <value>` like:
 
+
+## raspberrypi4
+```bash
+curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- -m raspberrypi4
+```
+
+## ubuntu x64
+```bash
+curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- -m qemux86-64
+```
+## ubuntu x86
+```bash
+curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- -m qemux86
+```
+## Sample
 ```bash
 curl -sL https://raw.githubusercontent.com/mottwan/supervised-installer/master/installer.sh | bash -s -- -m MY_MACHINE
 ```
