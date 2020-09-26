@@ -13,12 +13,7 @@ The Supervisord system is designed to provide a full-featured environment that i
 We only support Linux distributions that follow the [FHS 3.0](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)!
 
 ```
-docker-ce
-bash
-jq
-curl
-avahi-daemon
-dbus
+sudo apt install -y docker-ce bash jq curl avahi-daemon dbus apparmor-utils network-manager
 ```
 
 ## Optional
