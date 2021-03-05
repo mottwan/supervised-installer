@@ -40,16 +40,28 @@ newgrp docker
 ```
 ## Install Portainer
 ```bash
-docker pull portainer/portainer-ce
-docker volume create portainer_data
-docker run -d --label owner=portainer -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+docker pull portainer/portainer-ce; \
+docker volume create portainer_data; \
+docker run -d --label owner=portainer \
+           -p 8000:8000 \
+           -p 9000:9000 \
+           --name=portainer \ 
+           --restart=always \
+           -v /var/run/docker.sock:/var/run/docker.sock \ 
+           -v portainer_data:/data portainer/portainer-ce \
 ```
 ## Update Portainer
 ```bash
-docker pull portainer/portainer-ce
-docker stop portainer
-docker rm portainer
-docker run -d --label owner=portainer -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+docker pull portainer/portainer-ce; \
+docker stop portainer; \
+docker rm portainer; \
+docker run -d --label owner=portainer \
+           -p 8000:8000 \
+           -p 9000:9000 \
+           --name=portainer \
+           --restart=always \
+           -v /var/run/docker.sock:/var/run/docker.sock \
+           -v portainer_data:/data portainer/portainer-ce
 ```
 ## Open portainer in web browser
 ```bash
@@ -80,7 +92,12 @@ you can set these parameters by appending ` -- <parameter> <value>` like:
 
 ## raspberrypi4
 ```bash
-curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- -m raspberrypi4; \
+mkdir /home/$USER/hassio; \
+HASSIO_PATH=/home/$USER/hassio; \
+curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- \
+     -m raspberrypi4; \
+     -d $HASSIO_PATH \
+cd /home/$USER/hassio/homeassistant; \
 curl -sfSL https://hacs.xyz/install | bash -
 ```
 
