@@ -25,7 +25,23 @@ network-manager
 
 ## Dependencies
 ```bash
-sudo apt-get install -y bash curl git jq avahi-daemon dbus apparmor-utils network-manager libavahi-compat-libdnssd-dev libatlas3-base apt-transport-https ca-certificates socat software-properties-common nmap ftpd mc
+sudo apt-get install -y bash \
+                        curl \
+                        git \
+                        jq \
+                        avahi-daemon \
+                        dbus \
+                        apparmor-utils \
+                        network-manager \
+                        libavahi-compat-libdnssd-dev \
+                        libatlas3-base \
+                        apt-transport-https \
+                        ca-certificates \
+                        socat \
+                        software-properties-common \
+                        nmap \
+                        ftpd \
+                        mc
 ```
 ## Reboot
 ```bash
@@ -103,17 +119,23 @@ curl -sfSL https://hacs.xyz/install | bash -
 
 ## ubuntu x64
 ```bash
-curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- -m qemux86-64; \
+curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- \
+     -m qemux86-64; \
+cd /usr/share/hassio; \
 curl -sfSL https://hacs.xyz/install | bash -
 ```
 ## ubuntu x86
 ```bash
-curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- -m qemux86; \
+curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- \
+     -m qemux86; \
+cd /usr/share/hassio; \
 curl -sfSL https://hacs.xyz/install | bash -
 ```
 ## Sample
 ```bash
-curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- -m MY_MACHINE; \
+curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- \
+     -m MY_MACHINE; \
+cd /usr/share/hassio; \
 curl -sfSL https://hacs.xyz/install | bash -
 ```
 
