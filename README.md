@@ -105,9 +105,9 @@ you can set these parameters by appending ` -- <parameter> <value>` like:
 mkdir /home/$USER/hassio; \
 HASSIO_PATH=/home/$USER/hassio; \
 curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- \
-     -m raspberrypi4; \
-     -d $HASSIO_PATH \
-cd /home/$USER/hassio/homeassistant; \
+     -m raspberrypi4-64; \
+     sleep 5m; \
+cd /usr/share/hassio/homeassistant; \
 curl -sfSL https://hacs.xyz/install | bash -
 ```
 
