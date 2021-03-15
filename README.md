@@ -92,7 +92,7 @@ curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/m
      -m raspberrypi4; \
      sleep 5m; \
 cd /usr/share/hassio/homeassistant; \
-curl -sfSL https://hacs.xyz/install | bash -
+wget -q -o - https://install.hacs.xyz | bash -
 ```
 
 ## raspberrypi4-64
@@ -103,7 +103,7 @@ curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/m
      -m raspberrypi4-64; \
      sleep 5m; \
 cd /usr/share/hassio/homeassistant; \
-curl -sfSL https://hacs.xyz/install | bash -
+wget -q -o - https://install.hacs.xyz | bash -
 ```
 ## ubuntu x64
 ```bash
@@ -111,7 +111,7 @@ curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/m
      -m qemux86-64; \
      sleep 5m; \
 cd /usr/share/hassio/homeassistant; \
-curl -sfSL https://hacs.xyz/install | bash -
+wget -q -o - https://install.hacs.xyz | bash -
 ```
 ## ubuntu x86
 ```bash
@@ -119,15 +119,14 @@ curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/m
      -m qemux86; \
      sleep 5m; \
 cd /usr/share/hassio/homeassistant; \
-curl -sfSL https://hacs.xyz/install | bash -
+wget -q -o - https://install.hacs.xyz | bash -
 ```
 ## Sample
 ```bash
 curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- \
      -m MY_MACHINE; \
 cd /usr/share/hassio; \
-curl -sfSL https://hacs.xyz/install | bash -
-```
+wget -q -o - https://install.hacs.xyz | bash -
 
 ## Open Homeassistant
 ```bash
