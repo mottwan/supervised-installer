@@ -104,19 +104,21 @@ curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/m
      sleep 5m; \
 cd /usr/share/hassio/homeassistant; \
 curl -sfSL https://hacs.xyz/install | bash -
-
+```
 ## ubuntu x64
 ```bash
 curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- \
      -m qemux86-64; \
-cd /usr/share/hassio; \
+     sleep 5m; \
+cd /usr/share/hassio/homeassistant; \
 curl -sfSL https://hacs.xyz/install | bash -
 ```
 ## ubuntu x86
 ```bash
 curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -- \
      -m qemux86; \
-cd /usr/share/hassio; \
+     sleep 5m; \
+cd /usr/share/hassio/homeassistant; \
 curl -sfSL https://hacs.xyz/install | bash -
 ```
 ## Sample
