@@ -52,7 +52,7 @@ sudo reboot
 sudo curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh; \
 sudo groupadd docker; \
 sudo gpasswd -a $USER docker; \
-sudo read -p "Enter another user" otheruser; \
+read -p "Enter another user" otheruser; \
 sudo gpasswd -a $otheruser docker; \
 newgrp docker
 ```
