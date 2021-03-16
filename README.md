@@ -25,7 +25,23 @@ network-manager
 
 ## Dependencies
 ```bash
-sudo apt-get install -y bash curl git jq avahi-daemon dbus apparmor-utils network-manager libavahi-compat-libdnssd-dev libatlas3-base apt-transport-https ca-certificates socat software-properties-common nmap ftpd mc
+sudo apt-get install -y bash \
+                        curl \
+                        git \
+                        jq \
+                        avahi-daemon \
+                        dbus \
+                        apparmor-utils \
+                        network-manager \
+                        libavahi-compat-libdnssd-dev \
+                        libatlas3-base \
+                        apt-transport-https \
+                        ca-certificates \
+                        socat \
+                        software-properties-common \
+                        nmap \
+                        ftpd \
+                        mc
 ```
 ## Reboot
 ```bash
@@ -33,16 +49,25 @@ sudo reboot
 ```
 ## Docker install
 ```bash
-sudo curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
-sudo groupadd docker
-sudo gpasswd -a $USER docker
+sudo curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh; \
+sudo groupadd docker; \
+sudo gpasswd -a $USER docker; \
+sudo read -p "Enter another user" otheruser; \
+sudo gpasswd -a $otheruser docker; \
 newgrp docker
 ```
 ## Install Portainer
 ```bash
 docker pull portainer/portainer-ce; \
 docker volume create portainer_data; \
-docker run -d --label owner=portainer -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+docker run -d 
+           --label owner=portainer \
+           -p 8000:8000 \
+           -p 9000:9000 \
+           --name=portainer \
+           --restart=always \
+           -v /var/run/docker.sock:/var/run/docker.sock \
+           -v portainer_data:/data portainer/portainer-ce
 ```
 ## Update Portainer
 ```bash
